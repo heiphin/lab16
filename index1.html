@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Информация о пользователе</title>
+</head>
+<body>
+   <center>
+    <table style="border-collapse: collapse; width: 50%; margin-top: 50px;">
+        <tr style="background-color: #7887ab;">
+            <th style="border: 1px solid #000; padding: 8px;">Имя</th>
+            <th style="border: 1px solid #000; padding: 8px;">Возраст</th>
+            <th style="border: 1px solid #000; padding: 8px;">Email</th>
+        </tr>
+        
+        <tr>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell1"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell2"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell3"></td>
+        </tr>
+
+        <tr>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell11"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell22"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell33"></td>
+        </tr>
+
+        <tr>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell111"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell222"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell333"></td>
+        </tr>
+
+        <tr>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell1111"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell2222"></td>
+            <td style="border: 1px solid #000; padding: 8px;" id="cell3333"></td>
+        </tr>
+
+    </table>
+   </center>
+
+    <script>
+        var user = {
+            имя: "Нуралы",
+            возраст: "2",
+            email: "nuraly228@tagir.com"
+        };
+        var user1 = {
+            имя: "Адильхан",
+            возраст : '13',
+            email:  "bot@xbox.ru"
+        }
+        var user2 = {
+            имя: "Фархат",
+            возраст: "1,2",
+            email: "phara@robloxser.sha"
+        }
+        var user3 = {
+            имя: "Иван",
+            возраст: "35",
+            email: "ivan@ivanogich.google"
+        }
+    
+
+        document.getElementById("cell1").textContent = user.имя;
+        document.getElementById("cell2").textContent = user.возраст;
+        document.getElementById("cell3").textContent = user.email;
+
+        document.getElementById("cell11").textContent = user1.имя;
+        document.getElementById("cell22").textContent = user1.возраст;
+        document.getElementById("cell33").textContent = user1.email;
+        
+        document.getElementById("cell111").textContent = user2.имя;
+        document.getElementById("cell222").textContent = user2.возраст;
+        document.getElementById("cell333").textContent = user2.email;
+        
+        document.getElementById("cell1111").textContent = user3.имя;
+        document.getElementById("cell2222").textContent = user3.возраст;
+        document.getElementById("cell3333").textContent = user3.email;
+    </script>
+</body>
+</html>

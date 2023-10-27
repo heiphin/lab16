@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Генератор электронной почты</title>
+</head>
+<style>
+    .divka{
+        border: 2px solid black;
+        width: 520px;
+        height: 300px;
+        margin-top: 150px;
+        margin-left: 500px;
+    }
+    .bn1{
+        width: 150px;
+        height: 35px;
+        text-align: center;
+        align-items: center;
+        margin-left: 180px;
+        margin-top: 30px;
+    }
+</style>
+<body>
+
+    <div class="divka">
+        <h1 style="font-family: sans-serif; margin-left: 20px; padding-bottom: 20px;">Генератор электронной почты</h1>
+        <form>
+            <label for="username" style="font-family: sans-serif; font-size: 20px; margin-left: 50px;">Имя пользователя:</label>
+            <input type="text" id="username" required ><br><br>
+        <button type="button" onclick="generateEmail()" class="bn1">Сгенерировать Email</button><br><br>
+            <div id="result" style="margin-left: 110px; margin-top: 20px;"></div>
+        </form>
+    </div>
+
+
+    <script>
+        function generateEmail() {
+            const username = document.getElementById('username').value;
+            
+            if (username.trim() === "") {
+                document.getElementById('result').innerHTML = 'Пожалуйста, введите имя пользователя.';
+                return;
+            }
+
+            const generatedEmail = username + "@gmail.com";
+            document.getElementById('result').innerHTML = `Сгенерированный Email: ${generatedEmail}`;
+        }
+    </script>
+</body>
+</html>

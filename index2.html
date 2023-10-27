@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Скорость автомобиля</title>
+    <style>
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  border: 1px solid black !important;
+  margin-left: 50px;
+}
+
+.bn37 {
+  border-color: transparent;
+  background-color: #fff;
+  color: #000;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+  
+.bn37:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+    </style>
+</head>
+<body>
+
+    <table style="border: 1px solid black; border-radius: 20px; margin-top: 100px; margin-left: 450px;">
+        <tr>
+            <td>    
+                <p style="font-family: sans-serif; font-size: 30px; margin-left: 70px;">Марка:</p>
+            </td>
+            <td>
+                <p style="font-family: sans-serif; font-size: 40px;margin-left: -100px; margin-right: 20px;">Toyota</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-family: sans-serif; font-size: 30px; margin-left: 20px;">
+                    Текущая скорость: <span id="speed">0</span>
+                </p>
+            </td>
+        </tr>
+        
+        <tr>  
+            <td rowspan="2">
+                <center>
+                    <button onclick="ускоритьАвтомобиль()" class="bn3637 bn37">Ускорить</button>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        var автомобиль = {
+            марка: "Toyota",
+            скорость: 0,
+            ускорить: function (значение) {
+            this.скорость += значение;
+            обновитьСкорость();
+            }
+        };
+
+
+        function обновитьСкорость() {
+            document.getElementById("speed").textContent = автомобиль.скорость + " км/ч";
+        }
+
+
+        function ускоритьАвтомобиль() {
+            автомобиль.ускорить(10); 
+        }
+
+        обновитьСкорость(); 
+    </script>
+</body>
+</html>

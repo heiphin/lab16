@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Банковский счет</title>
+    <style>
+        .bn3 {
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(255, 255, 255);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.2s;
+  background: #385170;
+}
+
+.bn3:hover {
+  color: black;
+  background-color: rgb(255, 255, 255);
+}
+    </style>
+</head>
+<body>
+    <table style="border: 2px solid black; padding: 30px;margin-top:200px ;margin-left: 500px;height: 200px; background: #ececec;">
+        <tr>
+            <td rowspan="2">
+                <p style="font-size: 30px; font-family: sans-serif;">Баланс:</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                <span id="balance" style="font-family: sans-serif; font-size: 30px;">1000</span>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                <input type="number" id="amount" placeholder="Сумма" style="width: 200px;border-radius: 20px; height: 30px; width: 150px;padding-left: 20px;">
+            </td>
+        </tr>
+        <tr>
+            <td>     
+                <button onclick="пополнить()" class="bn3">Пополнить</button>
+            </td>
+            <td>
+                <button onclick="снять()" class="bn3">Снять</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        var банковскийСчет = {
+            баланс: 0,
+            пополнить: function (сумма) {
+                this.баланс += сумма;
+                обновитьБаланс();
+            },
+            снять: function (сумма) {
+                if (сумма <= this.баланс) {
+                    this.баланс -= сумма;
+                    обновитьБаланс();
+                } else {
+                    alert("Недостаточно средств на счете");
+                }
+            }
+        };
+
+        // Функция для обновления баланса на веб-странице
+        function обновитьБаланс() {
+            document.getElementById("balance").textContent = банковскийСчет.баланс + " тг.";
+        }
+
+        // Функции для пополнения и снятия средств
+        function пополнить() {
+            var сумма = parseFloat(document.getElementById("amount").value);
+            if (!isNaN(сумма)) {
+                банковскийСчет.пополнить(сумма);
+                document.getElementById("amount").value = "";
+            }
+        }
+
+        function снять() {
+            var сумма = parseFloat(document.getElementById("amount").value);
+            if (!isNaN(сумма)) {
+                банковскийСчет.снять(сумма);
+                document.getElementById("amount").value = "";
+            }
+        }
+
+        обновитьБаланс(); // Инициализация баланса при загрузке страницы
+    </script>
+</body>
+</html>
